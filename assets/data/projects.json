@@ -1,0 +1,42 @@
+[
+  {
+    "id": "code-obfuscator",
+    "title": "Source Code Obfuscator & Anti-Tamper Engine",
+    "description": "An automated code obfuscation and information hiding system built with Python and ANTLR parser grammars. Performs AST transformations, variable renaming, and flow obfuscation to protect intellectual property.",
+    "tags": ["Python", "ANTLR", "AST", "Information Hiding", "Security"],
+    "github": "https://github.com/Abolfazlparadox",
+    "demo": "#",
+    "featured": true,
+    "snippet": "lexer grammar PythonLexer;\nparser grammar PythonParser;\n\nclass ObfuscatorVisitor(PythonVisitor):\n    def visitFunctionDef(self, ctx):\n        new_name = generate_hash(ctx.name)\n        self.symbol_table[ctx.name] = new_name"
+  },
+  {
+    "id": "task-pipeline",
+    "title": "Scalable Asynchronous Task Processing Pipeline",
+    "description": "High-throughput backend task queue architecture utilizing Django REST Framework, Celery workers, and Redis message brokering, fully containerized with Docker Compose for production environments.",
+    "tags": ["Python", "Django", "Celery", "Redis", "Docker"],
+    "github": "https://github.com/Abolfazlparadox",
+    "demo": "#",
+    "featured": true,
+    "snippet": "@app.task(bind=True, max_retries=3)\ndef process_batch_job(self, batch_id):\n    logger.info(f'Processing batch {batch_id}')\n    return TaskPipeline.execute(batch_id)"
+  },
+  {
+    "id": "quantum-scheduler",
+    "title": "Quantum-Inspired Requirement Optimizer",
+    "description": "Research simulation framework for optimizing software requirement selection and scheduling using quantum computing principles and metaheuristic algorithms.",
+    "tags": ["Python", "Quantum Computing", "Optimization", "Algorithms"],
+    "github": "https://github.com/Abolfazlparadox",
+    "demo": "#",
+    "featured": false,
+    "snippet": "class QuantumState:\n    def __init__(self, num_qubits):\n        self.state = np.zeros(2**num_qubits, dtype=complex)\n        self.state[0] = 1.0"
+  },
+  {
+    "id": "portfolio-site",
+    "title": "Modern Developer Portfolio Platform",
+    "description": "Ultra-fast, accessible, and lightweight portfolio platform featuring modular Vanilla JS, CSS custom properties, theme switching, and seamless responsive design without heavy external frameworks.",
+    "tags": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Performance"],
+    "github": "https://github.com/Abolfazlparadox",
+    "demo": "#",
+    "featured": false,
+    "snippet": "const themeToggle = document.querySelector('.theme-toggle');\nthemeToggle.addEventListener('click', () => {\n  const current = document.documentElement.getAttribute('data-theme');\n  document.documentElement.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');\n});"
+  }
+]

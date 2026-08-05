@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Effects of Removing User-Land Hooks in Endpoint Protection",
+    "domain": "Information Hiding & Evasion Techniques",
+    "institution": "K. N. Toosi University of Technology",
+    "date": "2026",
+    "summary": "Investigated memory unhooking evasion techniques in modern EDR systems, demonstrating the necessity of kernel-level event tracing (ETW) for robust security self-protection."
+  },
+  {
+    "title": "Quantum Computing Applications in Software Requirement Optimization",
+    "domain": "Quantum Optimization & Software Engineering",
+    "institution": "K. N. Toosi University of Technology",
+    "date": "Ongoing Research",
+    "summary": "Exploring quantum-inspired algorithm formulations for optimal requirement selection and scheduling in complex software release planning."
+  }
+]

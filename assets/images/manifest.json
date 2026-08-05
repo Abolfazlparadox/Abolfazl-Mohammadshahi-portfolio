@@ -1,0 +1,15 @@
+{
+  "name": "Abolfazl Mohammadshahi Portfolio",
+  "short_name": "AM Portfolio",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#0066ff",
+  "icons": [
+    {
+      "src": "profile-placeholder.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
