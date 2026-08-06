@@ -1,0 +1,58 @@
+[
+  {
+    "category": "Backend Engineering",
+    "icon": "code",
+    "groups": [
+      {
+        "level": "Core",
+        "skills": ["Python", "Django", "Django REST Framework", "RESTful API Architecture", "Celery & Redis"]
+      },
+      {
+        "level": "Infrastructure",
+        "skills": ["Docker & Docker Compose", "RabbitMQ", "Linux Systems", "Git & GitHub"]
+      }
+    ]
+  },
+  {
+    "category": "Databases & Data",
+    "icon": "database",
+    "groups": [
+      {
+        "level": "Databases",
+        "skills": ["PostgreSQL", "MySQL", "SQLite", "SQL Optimization"]
+      },
+      {
+        "level": "Data",
+        "skills": ["Pandas", "Data Analysis"]
+      }
+    ]
+  },
+  {
+    "category": "System Design & Architecture",
+    "icon": "layers",
+    "groups": [
+      {
+        "level": "Architecture",
+        "skills": ["Distributed Systems", "Microservices", "Clean Architecture", "Scalable Applications"]
+      },
+      {
+        "level": "Engineering",
+        "skills": ["Algorithm Design & Analysis", "Gitflow Workflow", "Open Source"]
+      }
+    ]
+  },
+  {
+    "category": "Frontend & Tooling",
+    "icon": "layout",
+    "groups": [
+      {
+        "level": "Frontend",
+        "skills": ["HTML5 & CSS3", "Vanilla JavaScript (ES6+)", "Tailwind CSS", "Bootstrap", "Responsive Web Design"]
+      },
+      {
+        "level": "Tooling",
+        "skills": ["VS Code", "Node.js", "C# / .NET"]
+      }
+    ]
+  }
+]

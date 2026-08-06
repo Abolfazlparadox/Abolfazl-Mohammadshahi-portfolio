@@ -1,0 +1,90 @@
+[
+  {
+    "id": "parashop-api",
+    "title": "Parashop API",
+    "subtitle": "Production-Ready Distributed E-Commerce REST API",
+    "description": "A production-grade, distributed e-commerce REST API built with Django 5.2 and DRF. A modular monolith core (users, products, cart, orders) designed to pair with a planned FastAPI AI recommender microservice — engineered around clean architecture, concurrency safety, and asynchronous processing.",
+    "image": "assets/images/project-parashop-api.png",
+    "github": "https://github.com/Abolfazlparadox/Parashop-API",
+    "demo": "",
+    "featured": true,
+    "year": "2026",
+    "role": "Backend Architect & Engineer",
+    "tags": ["Python", "Django", "DRF", "PostgreSQL", "Redis", "Celery", "Docker", "JWT"],
+    "architecture": ["Modular Monolith", "Clean Architecture", "Distributed", "Microservice-Ready"],
+    "highlights": [
+      "Custom User Model + JWT auth (SimpleJWT) with custom token claims",
+      "Redis-backed shopping cart fully isolated from PostgreSQL until checkout",
+      "Concurrency-safe payments & coupons via transaction.atomic + select_for_update",
+      "Celery Beat cancels unpaid orders every 5 min and restores inventory",
+      "Bilingual (fa/en) catalog with N+1 query optimization (select_related / prefetch_related)",
+      "ZarinPal payment gateway, discount coupons, throttling & Swagger (drf-spectacular) docs"
+    ],
+    "snippet": "# Concurrency-safe payment verification\nwith transaction.atomic():\n    order = Order.objects.select_for_update().get(pk=order_id)\n    result = ZarinPalService.verify(authority)\n    if result.status == 'success':\n        order.status = 'paid'\n        order.total_paid = result.amount\n        order.save()"
+  },
+  {
+    "id": "ecommerce-ultimate",
+    "title": "Ecommerce-Ultimate",
+    "subtitle": "Full-Stack Retail Platform",
+    "description": "A comprehensive, production-ready full-stack e-commerce solution covering the entire retail lifecycle — from custom role-based authentication and a complex product catalog to cart operations and transactional checkout, with a fully integrated Django Templates frontend.",
+    "image": "assets/images/project-ecommerce-ultimate.png",
+    "github": "https://github.com/Abolfazlparadox/Ecommerce-Ultimate",
+    "demo": "",
+    "featured": false,
+    "year": "2024",
+    "role": "Full-Stack Developer — Backend Architecture & Integration",
+    "tags": ["Python", "Django", "JavaScript", "HTML5", "CSS3", "PostgreSQL", "Bootstrap"],
+    "architecture": ["Full-Stack", "Role-Based Auth", "Transactional Checkout", "Responsive"],
+    "highlights": [
+      "Custom auth with Customer / Vendor / Admin role separation",
+      "Advanced catalog: categories, brands, variants (color/size), inventory tracking",
+      "Transactional cart & checkout with session handling and order integrity",
+      "Localized infrastructure: Jalali calendar, National ID & mobile validation",
+      "Responsive Django Templates frontend across mobile, tablet & desktop"
+    ],
+    "snippet": "# Transactional checkout with inventory decrement\n@transaction.atomic\ndef place_order(user, cart):\n    order = Order.objects.create(user=user, total=cart.total)\n    for item in cart.items.select_related('product'):\n        Product.objects.filter(pk=item.product.pk)\\\n            .update(inventory=F('inventory') - item.qty)\n        OrderItem.objects.create(order=order, **item.snapshot)"
+  },
+  {
+    "id": "azad-shop",
+    "title": "Azad Shop",
+    "subtitle": "Advanced Distributed E-Commerce API",
+    "description": "A collaborative, highly scalable e-commerce backend architecture for multi-branch digital retail. Built with a team using Gitflow, emphasizing clean code, advanced ORM query optimization, and secure RESTful API design.",
+    "image": "assets/images/project-azad-shop.png",
+    "github": "https://github.com/Abolfazlparadox/azad_shop",
+    "demo": "",
+    "featured": false,
+    "year": "2025",
+    "role": "Backend / Architecture (Team Project)",
+    "tags": ["Python", "Django", "DRF", "PostgreSQL", "Git"],
+    "architecture": ["Distributed", "Team / Gitflow", "Scalable", "RESTful"],
+    "highlights": [
+      "Collaborative architecture built with Gitflow & agile principles",
+      "N+1 query elimination via select_related & prefetch_related",
+      "Fully decoupled DRF backend with comprehensive endpoint structures",
+      "Robust PostgreSQL modeling for catalogs, inventory & orders",
+      "Modular design ready for microservices expansion & containerization"
+    ],
+    "snippet": "# Eliminate N+1 queries across catalog endpoints\nclass ProductViewSet(ReadOnlyModelViewSet):\n    queryset = Product.objects.select_related('category')\\\n        .prefetch_related('variants', 'images')\n    serializer_class = ProductSerializer\n    filter_backends = [DjangoFilterBackend, SearchFilter]"
+  },
+  {
+    "id": "wooden-shop",
+    "title": "Wooden Shop",
+    "subtitle": "Modular Django E-Commerce Architecture Foundation",
+    "description": "A clean, domain-driven Django 5.2 modular monolith foundation that separates concerns into accounts, orders, and shop business domains — engineered as a scalable base for e-commerce growth.",
+    "image": "assets/images/project-wooden-shop.png",
+    "github": "https://github.com/Abolfazlparadox/wooden_shop",
+    "demo": "",
+    "featured": false,
+    "year": "2025",
+    "role": "Backend Engineer",
+    "tags": ["Python", "Django", "SQLite", "Django ORM"],
+    "architecture": ["Modular Monolith", "Domain-Driven", "Clean Separation"],
+    "highlights": [
+      "Domain-driven app separation: accounts, orders, shop, core",
+      "Django 5.2 project with conventional, maintainable structure",
+      "Foundation designed for a DRF API layer & PostgreSQL migration",
+      "Isolated business domains ready for independent scaling"
+    ],
+    "snippet": "# Domain-driven project layout\nwooden_shop/\n  accounts/   # auth & user domain\n  orders/     # order lifecycle domain\n  shop/       # catalog & product domain\n  core/       # settings, urls, wsgi/asgi"
+  }
+]

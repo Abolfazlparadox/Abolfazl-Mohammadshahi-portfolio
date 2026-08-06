@@ -1,0 +1,273 @@
+/* Premium Motion & Ambient Effects */
+
+/* ---------- Scroll Progress Bar ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1100;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-light), #93c5fd);
+  box-shadow: 0 0 12px var(--accent-glow);
+  transition: width 0.08s linear;
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* ---------- Custom Cursor ---------- */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ffffff;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #ffffff;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              opacity 0.25s ease;
+}
+
+.cursor-ring.is-hover {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.cursor-ring.is-down {
+  width: 28px;
+  height: 28px;
+}
+
+.cursor-dot.is-hidden,
+.cursor-ring.is-hidden { opacity: 0; }
+
+/* Hide custom cursor on touch / small screens */
+@media (hover: none), (max-width: 900px) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+/* When custom cursor is active, keep native cursor but subtle */
+body.cursor-active,
+body.cursor-active * { cursor: none; }
+body.cursor-active input,
+body.cursor-active textarea,
+body.cursor-active select { cursor: text; }
+body.cursor-active a,
+body.cursor-active button,
+body.cursor-active [data-tilt],
+body.cursor-active .tech-chip { cursor: none; }
+
+/* ---------- Ambient Background ---------- */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+[data-theme="light"] .ambient-grid { opacity: 0.5; }
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.ambient-glow-1 {
+  width: 520px;
+  height: 520px;
+  top: -180px;
+  right: -120px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  animation: float-glow 18s ease-in-out infinite;
+}
+
+.ambient-glow-2 {
+  width: 420px;
+  height: 420px;
+  bottom: -160px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.18), transparent 70%);
+  animation: float-glow 22s ease-in-out infinite reverse;
+}
+
+@keyframes float-glow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, 40px) scale(1.1); }
+}
+
+[data-theme="light"] .ambient-glow { opacity: 0.35; }
+
+/* ---------- Hero Background Layer ---------- */
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
+}
+
+/* Dark scrim keeps the hero reading as dark theme */
+.hero-bg-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 9, 11, 0.55) 0%, rgba(9, 9, 11, 0.25) 45%, var(--bg-primary) 100%);
+}
+
+[data-theme="light"] .hero-bg-img { opacity: 0.28; }
+[data-theme="light"] .hero-bg-layer::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 45%, var(--bg-primary) 100%);
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent 75%, var(--bg-primary) 100%);
+  pointer-events: none;
+}
+
+/* ---------- Scroll Indicator ---------- */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.scroll-indicator:hover { color: var(--accent-primary); }
+
+.scroll-indicator-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scroll-indicator-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid currentColor;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.scroll-indicator-wheel {
+  width: 3px;
+  height: 7px;
+  background-color: currentColor;
+  border-radius: 2px;
+  animation: scroll-wheel 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  70% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+/* ---------- Magnetic Button helper (JS-driven, base styles here) ---------- */
+.btn-magnetic, .nav-cta {
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- Glow Border (animated) for featured card ---------- */
+.project-card-featured {
+  position: relative;
+}
+
+.project-card-featured::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(130deg, var(--accent-primary), transparent 40%, transparent 60%, var(--accent-light));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.project-card-featured:hover::after { opacity: 1; }
+
+/* ---------- Reveal animation utility (clip-path text) ---------- */
+.reveal-clip {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.reveal-clip.is-revealed { clip-path: inset(0 0 0 0); }
+
+/* ---------- Section divider with gradient line ---------- */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+  margin: 0;
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Concurrency-Safe Order Processing in Distributed E-Commerce",
+    "domain": "Backend Systems & Reliability",
+    "institution": "Applied in Parashop API",
+    "date": "2026",
+    "summary": "Practical study of idempotency and race-condition prevention in payment flows using database-level row locking (select_for_update) and transactional boundaries."
+  },
+  {
+    "title": "Quantum-Inspired Optimization for Software Requirement Selection",
+    "domain": "Optimization & Software Engineering",
+    "institution": "K. N. Toosi University of Technology",
+    "date": "Ongoing",
+    "summary": "Exploring quantum-inspired metaheuristics for optimal requirement selection and release scheduling in complex software planning."
+  }
+]

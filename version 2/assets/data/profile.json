@@ -1,0 +1,23 @@
+{
+  "name": "Abolfazl Mohammadshahi",
+  "title": "Backend Software Engineer",
+  "tagline": "Building scalable web systems, robust backend architectures, and high-performance APIs.",
+  "bio": "Backend Software Engineer and M.Sc. student in Software Engineering at K. N. Toosi University of Technology. I design and ship distributed Django services — REST APIs, async task pipelines, and database architectures optimized for scale.",
+  "short_bio": "Backend engineer specializing in distributed Django services, REST APIs, and scalable system architecture.",
+  "location": "Tehran / Sabzevar, Iran",
+  "email": "abolfazl.mohammadshahi@gmail.com",
+  "academic_email": "abolfazl.mohammadshahi@email.kntu.ac.ir",
+  "phone": "+98 935 672 7789",
+  "github": "https://github.com/Abolfazlparadox",
+  "linkedin": "https://linkedin.com/in/abolfazl-mohammadshahi-12b87b324",
+  "status": "Available for Backend & Software Engineering Roles",
+  "resume_url": "assets/cv/Abolfazl_Mohammadshahi_Resume.pdf",
+  "site_url": "https://my-portfolio.abolfazlmohammadshahi78.workers.dev/",
+  "stats": [
+    { "value": 22, "suffix": "", "label": "Public Repos", "icon": "github" },
+    { "value": 4, "suffix": "", "label": "E-Commerce APIs", "icon": "code" },
+    { "value": 5, "suffix": "+", "label": "Years Building", "icon": "clock" },
+    { "value": 12, "suffix": "+", "label": "Technologies", "icon": "layers" }
+  ],
+  "focus": ["Software Engineering", "Backend Engineering", "Python", "Django", "REST APIs", "System Design", "Distributed Systems", "Clean Code", "Scalable Applications", "Open Source"]
+}

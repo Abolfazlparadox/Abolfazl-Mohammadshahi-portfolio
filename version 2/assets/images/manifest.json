@@ -1,0 +1,23 @@
+{
+  "name": "Abolfazl Mohammadshahi Portfolio",
+  "short_name": "AM Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#0066ff",
+  "description": "Backend Software Engineer — Python, Django, distributed systems, and scalable REST APIs.",
+  "icons": [
+    {
+      "src": "profile-placeholder.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "profile.jpeg",
+      "sizes": "192x192 512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
