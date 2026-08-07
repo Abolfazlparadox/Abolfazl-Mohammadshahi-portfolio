@@ -50,7 +50,7 @@ Or deploy directly to any static host (Cloudflare Pages/Workers, GitHub Pages, N
 
 The contact form uses [FormSubmit](https://formsubmit.co) — free, no signup, no backend. The endpoint is derived automatically from the email in `assets/data/profile.json`.
 
-**One-time activation:** the first time a visitor submits the form, FormSubmit sends a confirmation email to `abolfazl.mohammadshahi@gmail.com`. Click the confirmation link once to activate delivery. After that, all submissions are delivered and the visitor is redirected back with a success confirmation.
+**One-time activation:** the first time a visitor submits the form, FormSubmit sends a confirmation email to `abolfazlmohammadshahi78@gmail.com`. Click the confirmation link once to activate delivery. After that, all submissions are delivered and the visitor is redirected back with a success confirmation.
 
 ## License
 
